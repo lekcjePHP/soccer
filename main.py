@@ -82,13 +82,15 @@ class Plansza():
 		igreki = []
 		for y in range(self.maxY):
 			igreki.append(y)
-		for y in igreki.reverse():
+		igreki.reverse()
+		for y in igreki:
 			sciezkaRuchow.append(self.dajPunkt(self.maxX, y))
 			
 		iksy = []
 		for x in range(self.maxX-1, self.maxX/2+1):
 			iksy.append(x)
-		for x in iksy.reverse():
+		iksy.reverse()
+		for x in iksy:
 			sciezkaRuchow.append(self.dajPunkt(x, 0))
 			
 		sciezkaRuchow.append(punktZaBramkaDolna3)
@@ -98,7 +100,8 @@ class Plansza():
 		iksy = []
 		for x in range(self.maxX/2-1):
 			iksy.append(x)
-		for x in iksy.reverse():
+		iksy.reverse()
+		for x in iksy:
 			sciezkaRuchow.append(self.dajPunkt(x,0))
 		
 		for y in range(1, slef.maxY):

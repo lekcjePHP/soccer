@@ -27,7 +27,6 @@ class Punkt():
 		#
 		# Rozwazania przypadkow:
 		# 1. Niedozwolone ruchy:
-		#    - chodzic po "scianie"
 		#    - przejscie z punktu A do punktu B gdzie w sciezce istnial ruch z B do A a takze jesli istnial ruch
 		#	z a do b
 		#   
