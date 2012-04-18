@@ -71,6 +71,44 @@ class Plansza():
 		punkty.append(punktZaBramkaGorna1)
 		punkty.append(punktZaBramkaGorna2)
 		punkty.append(punktZaBramkaGorna3)
+		#generowanie poczatkowej sciezki ktora symuluje obramowanie boiska
+		sciezkaRuchow.append(punktZaBramkaGorna1)
+		sciezkaRuchow.append(punktZaBramkaGorna2)
+		sciezkaRuchow.append(punktZaBramkaGorna3)
+		
+		for x in range(self.maxX/2 + 1, self.maxX):
+			sciezkaRuchow.append(self.dajPunkt(x, self.maxY))
+		
+		igreki = []
+		for y in range(self.maxY):
+			igreki.append(y)
+		for y in igreki.reverse():
+			sciezkaRuchow.append(self.dajPunkt(self.maxX, y))
+			
+		iksy = []
+		for x in range(self.maxX-1, self.maxX/2+1):
+			iksy.append(x)
+		for x in iksy.reverse():
+			sciezkaRuchow.append(self.dajPunkt(x, 0))
+			
+		sciezkaRuchow.append(punktZaBramkaDolna3)
+		sciezkaRuchow.append(punktZaBramkaDolna2)
+		sciezkaRuchow.append(punktZaBramkaDolna1)	
+		
+		iksy = []
+		for x in range(self.maxX/2-1):
+			iksy.append(x)
+		for x in iksy.reverse():
+			sciezkaRuchow.append(self.dajPunkt(x,0))
+		
+		for y in range(1, slef.maxY):
+			sciezkaRuchow.append(self.dajPunkt(0, y))
+		
+		for x in range(1, self.maxX/2-1):
+			sciezkaRuchow.append(self.dajPunkt(x, self.maxY);	
+			
+		sciezkaRuchow.append(self.dajPunkt(punktZaBramkaGorna1))		
+		
 			
 	def wykonajRuch(self, punkt):
 	
@@ -97,9 +135,6 @@ class Plansza():
 		
 			
 	def czyRuchDozwolony(self, punkt):
-		#sprawdzamy czy punkt z argumentu jest na liscie punktow na ktore mozna przejsc 
-		#z self.bierzacyPunkt.
-		#musimy sprawdzac czy nie probujemy isc czasem po krawedzi
 		if (punkt in self.biezacyPunkt.dozwoloneRuchy):
 			return True
 		else:
@@ -112,6 +147,7 @@ class Plansza():
 		for punkt in punkty:
 			if punkt.wspolrzedne == (x,y):
 				return punkt
+		return False		
 				
 	#DONE				
 	def zmienGracza(self):
